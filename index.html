@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>斩失眠</title>
+<link rel="stylesheet" href="css/style.css?v=20261124d">
+</head>
+<body>
+<div id="app">
+  <div id="veil"></div>
+  <canvas id="game"></canvas>
+
+  <!-- 开始界面 -->
+  <section id="scr-start" class="screen">
+    <h1 class="title">斩失眠</h1>
+    <div class="menu-col">
+      <button class="btn" id="btn-start">开始游戏</button>
+      <button class="btn" id="btn-maker">制作人</button>
+      <button class="btn" id="btn-reset">重置存档</button>
+    </div>
+    <div class="corner-toggles">
+      <button class="roundbtn" id="btn-sfx">点击<br>音效</button>
+      <button class="roundbtn" id="btn-music">音乐</button>
+    </div>
+  </section>
+
+  <!-- 关卡选择界面（左关卡 / 右升级，补充 docx 分栏） -->
+  <section id="scr-select" class="screen hidden">
+    <button class="closebtn" id="btn-close-select" aria-label="返回开始"></button>
+    <div class="sel-wrap">
+      <div class="sel-left">
+        <h1 class="title">选择关卡</h1>
+        <div class="panel"><div id="level-grid" class="grid"></div></div>
+      </div>
+      <div class="sel-right">
+        <h1 class="title">升级手段</h1>
+        <div class="panel upg-panel">
+          <div class="upg-cols">
+            <div class="upg-col" id="upg-col-zhan"></div>
+            <div class="upg-col" id="upg-col-zhuai"></div>
+          </div>
+          <div class="upg-wallet" id="upg-wallet"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 升级节点弹窗 -->
+  <div id="mdl-upg" class="modal hidden">
+    <div class="box upg-box">
+      <p class="line" id="upg-intro"></p>
+      <p class="line" id="upg-cost"></p>
+      <div class="menu-row">
+        <button class="btn" id="btn-upg-cancel">取消</button>
+        <button class="btn" id="btn-upg-ok">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第一关教学提示盒 -->
+  <div id="tut-hint" class="box tut hidden"></div>
+
+  <!-- 制作人弹窗 -->
+  <div id="mdl-maker" class="modal hidden">
+    <div class="box">
+      <button class="x" data-close="mdl-maker" aria-label="关闭">×</button>
+      <p class="line">制作人：失眠玩家</p>
+      <p class="line">Agent：Qoder</p>
+    </div>
+  </div>
+
+  <!-- 暂停弹窗 -->
+  <div id="mdl-pause" class="modal hidden">
+    <div class="box">
+      <button class="x" data-close="mdl-pause" aria-label="关闭">×</button>
+      <div class="menu-col">
+        <button class="btn" id="btn-resume">继续游戏</button>
+        <button class="btn" id="btn-restart">重新关卡</button>
+        <button class="btn" id="btn-quit">退出关卡</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 成功页 -->
+  <div id="mdl-win" class="modal overlay-light hidden">
+    <div class="ghost">
+      <h2 class="dark">成功入睡啦！</h2>
+      <div class="menu-col">
+        <button class="btn" id="btn-next">继续下一关</button>
+        <button class="btn" id="btn-win-select">关卡选择</button>
+        <button class="btn" id="btn-win-exit">退出游戏</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 失败页 -->
+  <div id="mdl-fail" class="modal overlay-dark hidden">
+    <div class="ghost">
+      <h2 class="light">失眠了呜呜QVQ</h2>
+      <div class="menu-col">
+        <button class="btn" id="btn-retry">重新开始</button>
+        <button class="btn" id="btn-fail-select">关卡选择</button>
+        <button class="btn" id="btn-fail-exit">退出游戏</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/storage.js?v=20261124d"></script>
+<script src="js/pixelart.js?v=20261124d"></script>
+<script src="js/sheets.js?v=20261124d"></script>
+<script src="js/pixeltext.js?v=20261124d"></script>
+<script src="js/uibtn.js?v=20261124d"></script>
+<script src="js/fx.js?v=20261124d"></script>
+<script src="js/audio.js?v=20261124d"></script>
+<script src="js/levels.js?v=20261124d"></script>
+<script src="js/upg.js?v=20261124d"></script>
+<script src="js/physics.js?v=20261124d"></script>
+<script src="js/entities.js?v=20261124d"></script>
+<script src="js/input.js?v=20261124d"></script>
+<script src="js/ui.js?v=20261124d"></script>
+<script src="js/scenes.js?v=20261124d"></script>
+<script src="js/main.js?v=20261124d"></script>
+</body>
+</html>
